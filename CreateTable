@@ -1,0 +1,11 @@
+FORMAT:
+CREATE TABLE ContactPerson(
+     userID CHAR(7) NOT NULL,
+     companyID CHAR(7) NOT NULL,
+     PRIMARY KEY (userID),
+     UNIQUE (companyID),
+     FOREIGN KEY (userID) REFERENCES User(userID), 
+     ON DELETE CASCADE ON UPDATE CASCADE
+     FOREIGN KEY (companyID) REFERENCES Company(companyID)
+     ON DELETE CASCADE ON UPDATE CASCADE
+);
