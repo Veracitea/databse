@@ -20,3 +20,9 @@ CREATE TABLE Product_Type(
   ,description            VARCHAR(55) NOT NULL
   ,parent_product_type_id VARCHAR(55) NULL
 );
+
+CREATE TABLE IF NOT EXISTS restricted_to_sell(
+   Product_Type_id VARCHAR(55) NOT NULL
+  ,Shop_id         VARCHAR(55) NOT NULL
+  ,PRIMARY KEY(Product_Type_id,Shop_id)
+);
