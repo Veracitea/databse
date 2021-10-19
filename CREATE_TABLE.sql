@@ -23,7 +23,7 @@ CREATE TABLE Product_Type(
 
 CREATE TABLE restricted_to_sell(
    Product_Type_id VARCHAR(55) NOT NULL
-  ,Shop_id         VARCHAR(55) NOT NULL
+  ,Shop_id         VARCHAR(10) NOT NULL
   ,PRIMARY KEY(Product_Type_id,Shop_id)
   ,FOREIGN KEY (Product_Type_id) REFERENCES Product_Type(Product_Type_id)
    ON DELETE CASCADE ON UPDATE CASCADE
