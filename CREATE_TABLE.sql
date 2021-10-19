@@ -21,8 +21,12 @@ CREATE TABLE Product_Type(
   ,parent_product_type_id VARCHAR(55) NULL
 );
 
-CREATE TABLE IF NOT EXISTS restricted_to_sell(
+CREATE TABLE restricted_to_sell(
    Product_Type_id VARCHAR(55) NOT NULL
   ,Shop_id         VARCHAR(55) NOT NULL
   ,PRIMARY KEY(Product_Type_id,Shop_id)
+  ,FOREIGN KEY (Product_Type_id) REFERENCES Product_Type(Product_Type_id)
+   ON DELETE CASCADE ON UPDATE CASCADE
+   ,FOREIGN KEY (Shop_id) REFERENCES Shop(Shop_id)
+   ON DELETE CASCADE ON UPDATE CASCADE
 );
