@@ -1,0 +1,501 @@
+Shop_id,name
+SHOP_1,"Baumbach, Brekke and Torphy"
+SHOP_2,Dietrich-Quitzon
+SHOP_3,Marquardt-McClure
+SHOP_4,Casper and Sons
+SHOP_5,Cole-White
+SHOP_6,Crona-Osinski
+SHOP_7,Stark Group
+SHOP_8,Mosciski and Sons
+SHOP_9,"Aufderhar, Boyer and Glover"
+SHOP_10,"Schneider, Friesen and Abshire"
+SHOP_11,Hane-Vandervort
+SHOP_12,Douglas and Sons
+SHOP_13,"Franecki, Hermiston and Medhurst"
+SHOP_14,Rolfson-Mosciski
+SHOP_15,Cronin Group
+SHOP_16,"Rolfson, Hammes and Berge"
+SHOP_17,"Hand, Metz and Beahan"
+SHOP_18,Hoeger Inc
+SHOP_19,Williamson Inc
+SHOP_20,Hudson and Sons
+SHOP_21,Borer and Sons
+SHOP_22,Hoeger LLC
+SHOP_23,"Koelpin, Conn and Willms"
+SHOP_24,Ratke Inc
+SHOP_25,"Turcotte, Ward and Pfeffer"
+SHOP_26,Torp and Sons
+SHOP_27,"Schoen, Blanda and Spencer"
+SHOP_28,"Lynch, Thompson and Hirthe"
+SHOP_29,McKenzie Group
+SHOP_30,"Steuber, Wiegand and Rutherford"
+SHOP_31,Herman Group
+SHOP_32,Torphy LLC
+SHOP_33,Heller-Waelchi
+SHOP_34,Rowe-Heathcote
+SHOP_35,Quitzon-Muller
+SHOP_36,Heller-Gleason
+SHOP_37,"Kihn, Swift and Wyman"
+SHOP_38,"Bogisich, Pfeffer and Bogan"
+SHOP_39,Bode Group
+SHOP_40,"Auer, DuBuque and Hamill"
+SHOP_41,Olson and Sons
+SHOP_42,Rohan and Sons
+SHOP_43,Langosh Group
+SHOP_44,Wilderman-Willms
+SHOP_45,"Ryan, Cremin and Weber"
+SHOP_46,Beahan-Kertzmann
+SHOP_47,Hintz Group
+SHOP_48,West-Wunsch
+SHOP_49,Kub LLC
+SHOP_50,Sporer-Lind
+SHOP_51,"Volkman, Murphy and Conroy"
+SHOP_52,Swift Group
+SHOP_53,Hackett-Christiansen
+SHOP_54,Bergnaum-Wuckert
+SHOP_55,Schimmel LLC
+SHOP_56,Koss-Doyle
+SHOP_57,Kihn Inc
+SHOP_58,Ratke-Marquardt
+SHOP_59,"Wilderman, Runolfsson and Christiansen"
+SHOP_60,Balistreri and Sons
+SHOP_61,Hills LLC
+SHOP_62,"Jenkins, Will and Collins"
+SHOP_63,Bruen LLC
+SHOP_64,"Daugherty, Langworth and Schmidt"
+SHOP_65,"Skiles, Turcotte and Runolfsdottir"
+SHOP_66,"Barrows, Schoen and Conn"
+SHOP_67,"Murray, Wyman and Fahey"
+SHOP_68,Ernser Inc
+SHOP_69,Bartoletti-Cole
+SHOP_70,Rowe-MacGyver
+SHOP_71,Weissnat Group
+SHOP_72,Robel-Braun
+SHOP_73,"Nolan, Sporer and O'Kon"
+SHOP_74,Stoltenberg and Sons
+SHOP_75,Pouros-Jones
+SHOP_76,Gaylord-Legros
+SHOP_77,Emard Inc
+SHOP_78,"Haley, Pfannerstill and Abbott"
+SHOP_79,Murray Group
+SHOP_80,"Kirlin, Schinner and Daniel"
+SHOP_81,Schmeler-McKenzie
+SHOP_82,Lemke-Feest
+SHOP_83,Hamill-Oberbrunner
+SHOP_84,Balistreri-Howell
+SHOP_85,Rosenbaum-Daniel
+SHOP_86,Mohr-Homenick
+SHOP_87,"Jacobson, Heller and Auer"
+SHOP_88,West Group
+SHOP_89,Little Inc
+SHOP_90,Batz LLC
+SHOP_91,"Jacobi, Schimmel and Legros"
+SHOP_92,Williamson-Osinski
+SHOP_93,"Morar, Wiza and Kihn"
+SHOP_94,Schamberger-Collins
+SHOP_95,"West, Conroy and Hintz"
+SHOP_96,Parisian LLC
+SHOP_97,Witting Inc
+SHOP_98,"Swift, Homenick and Koch"
+SHOP_99,Spencer-Schimmel
+SHOP_100,McGlynn LLC
+SHOP_101,Terry-Walter
+SHOP_102,Johns-Waters
+SHOP_103,"Hoppe, Lowe and Stark"
+SHOP_104,Jakubowski-Kuhn
+SHOP_105,Rowe and Sons
+SHOP_106,"Raynor, Lesch and Kerluke"
+SHOP_107,Waelchi-Herzog
+SHOP_108,Glover LLC
+SHOP_109,Gleichner-Funk
+SHOP_110,West and Sons
+SHOP_111,Beahan and Sons
+SHOP_112,Nolan-Mante
+SHOP_113,Bailey-Connelly
+SHOP_114,Skiles LLC
+SHOP_115,"Reichert, Ratke and Kunze"
+SHOP_116,"Jaskolski, White and Corkery"
+SHOP_117,"Heathcote, King and Carroll"
+SHOP_118,Hand-Huel
+SHOP_119,"Medhurst, Keebler and Gibson"
+SHOP_120,Gibson LLC
+SHOP_121,"Ratke, Haley and Beier"
+SHOP_122,Ratke LLC
+SHOP_123,"Wehner, Trantow and Wilderman"
+SHOP_124,Larson Group
+SHOP_125,"Little, Gulgowski and Gusikowski"
+SHOP_126,"Gerlach, Jacobi and Prohaska"
+SHOP_127,Reinger-Herzog
+SHOP_128,Kuvalis-Douglas
+SHOP_129,Koelpin LLC
+SHOP_130,Willms Inc
+SHOP_131,"Wintheiser, Hahn and Goyette"
+SHOP_132,"Murazik, Trantow and Quitzon"
+SHOP_133,Mertz LLC
+SHOP_134,"Thompson, Becker and Ernser"
+SHOP_135,Schamberger Group
+SHOP_136,Effertz LLC
+SHOP_137,"Gibson, White and Kshlerin"
+SHOP_138,Tremblay-Casper
+SHOP_139,Reinger Inc
+SHOP_140,Blick Inc
+SHOP_141,"Rath, Braun and Walker"
+SHOP_142,Labadie-Krajcik
+SHOP_143,"McDermott, Weimann and Ferry"
+SHOP_144,Beier-Leannon
+SHOP_145,"Nienow, Oberbrunner and Bergstrom"
+SHOP_146,Konopelski Inc
+SHOP_147,"Torp, Mann and Wolf"
+SHOP_148,Schaden LLC
+SHOP_149,"Kovacek, Mertz and Boyle"
+SHOP_150,Moen Group
+SHOP_151,"Homenick, Smitham and Block"
+SHOP_152,Hayes LLC
+SHOP_153,"Wisoky, Conroy and Kiehn"
+SHOP_154,"Littel, Veum and Greenfelder"
+SHOP_155,Marvin-Champlin
+SHOP_156,"Brown, Koepp and Green"
+SHOP_157,Dicki-Kessler
+SHOP_158,"Hyatt, Okuneva and Schroeder"
+SHOP_159,Cormier Group
+SHOP_160,"Runolfsdottir, Schuster and Kuhn"
+SHOP_161,Schultz and Sons
+SHOP_162,"Kozey, Purdy and Johnston"
+SHOP_163,Muller-Schneider
+SHOP_164,Shields and Daughter
+SHOP_165,Mills LLC
+SHOP_166,Orn Group
+SHOP_167,O'Keefe-Quigley
+SHOP_168,"Leuschke, Jacobson and Boyle"
+SHOP_169,Mann-Kautzer
+SHOP_170,Walsh-Towne
+SHOP_171,Rosenbaum-Kreiger
+SHOP_172,Kunze-Jacobi
+SHOP_173,"Johnston, Batz and Schuppe"
+SHOP_174,Lind-Buckridge
+SHOP_175,Flatley-Jacobi
+SHOP_176,Rau LLC
+SHOP_177,Schmidt Inc
+SHOP_178,Altenwerth Group
+SHOP_179,Harber Group
+SHOP_180,Cruickshank-McDermott
+SHOP_181,"Johns, Casper and Hessel"
+SHOP_182,"Stiedemann, Ritchie and Watsica"
+SHOP_183,"Olson, Casper and Davis"
+SHOP_184,"Walsh, Gaylord and Cruickshank"
+SHOP_185,"Wyman, Thompson and Green"
+SHOP_186,Hermiston and Sons
+SHOP_187,"Frami, Murray and Marvin"
+SHOP_188,Hessel and Sons
+SHOP_189,Gislason Inc
+SHOP_190,McKenzie and Sons
+SHOP_191,Koss-Sipes
+SHOP_192,"Macejkovic, Bashirian and Hane"
+SHOP_193,"Runolfsdottir, Nikolaus and Barton"
+SHOP_194,Berge-Thompson
+SHOP_195,Turcotte-Krajcik
+SHOP_196,Beier Inc
+SHOP_197,Grant and Sons
+SHOP_198,"Bergnaum, Feeney and Orn"
+SHOP_199,Hackett-Wintheiser
+SHOP_200,"Berge, Balistreri and Price"
+SHOP_201,Carroll LLC
+SHOP_202,Stoltenberg and Daughters
+SHOP_203,Nader LLC
+SHOP_204,Parisian-Bednar
+SHOP_205,"Weber, Veum and Dach"
+SHOP_206,"Konopelski, Lesch and Keeling"
+SHOP_207,Wilkinson Group
+SHOP_208,"Schamberger, Grant and Keeling"
+SHOP_209,"Turcotte, Franecki and Cassin"
+SHOP_210,"Witting, Botsford and Crist"
+SHOP_211,Farrell-Howe
+SHOP_212,"Simonis, Hermann and Beatty"
+SHOP_213,Zemlak-Macejkovic
+SHOP_214,"Kohler, Torp and Kulas"
+SHOP_215,Dickinson Group
+SHOP_216,Kuhlman Inc
+SHOP_217,Borer-Jakubowski
+SHOP_218,Gulgowski-Will
+SHOP_219,Denesik LLC
+SHOP_220,Williamson-Jacobi
+SHOP_221,"Little, White and Kshlerin"
+SHOP_222,Ferry-Treutel
+SHOP_223,Wisozk-Terry
+SHOP_224,Prohaska-Moen
+SHOP_225,Gleason-Bednar
+SHOP_226,Monahan-Schowalter
+SHOP_227,"Bradtke, Weber and Ebert"
+SHOP_228,Oberbrunner Inc
+SHOP_229,McGlynn-Lakin
+SHOP_230,Gerhold-Wuckert
+SHOP_231,Weber and Sons
+SHOP_232,"Kling, Schulist and Borer"
+SHOP_233,Frami and Sons
+SHOP_234,Borer LLC
+SHOP_235,Schamberger-Hilll
+SHOP_236,Wuckert LLC
+SHOP_237,Prohaska and Sons
+SHOP_238,Volkman-Hagenes
+SHOP_239,"Mitchell, Trantow and Lebsack"
+SHOP_240,Jacobi-Blanda
+SHOP_241,Legros-Hirthe
+SHOP_242,Cummings-Ruecker
+SHOP_243,"Kerluke, Douglas and Runolfsson"
+SHOP_244,"Gleichner, Roberts and O'Kon"
+SHOP_245,Hand-Bauch
+SHOP_246,"Barrows, Prosacco and Satterfield"
+SHOP_247,Runolfsson-Cole
+SHOP_248,"Kuphal, Olson and Kihn"
+SHOP_249,"Hegmann, Jerde and Hansen"
+SHOP_250,Reinger LLC
+SHOP_251,Medhurst-Koepp
+SHOP_252,"Koch, Bins and Watsica"
+SHOP_253,"Reinger, Bruen and Dach"
+SHOP_254,Strosin Inc
+SHOP_255,Smitham and Sons
+SHOP_256,Little LLC
+SHOP_257,Rohan-Rogahn
+SHOP_258,Armstrong-Schmeler
+SHOP_259,Bernier-Okuneva
+SHOP_260,Predovic Inc
+SHOP_261,"Jast, Stamm and Johnson"
+SHOP_262,"Farrell, Leannon and Frami"
+SHOP_263,Legros-Rodriguez
+SHOP_264,Hand Inc
+SHOP_265,Altenwerth-Will
+SHOP_266,Lang Inc
+SHOP_267,"Windler, Fisher and Kunze"
+SHOP_268,Hettinger-Quigley
+SHOP_269,"Harris, Kuhlman and Mertz"
+SHOP_270,Wolff Group
+SHOP_271,"Willms, Jaskolski and Nienow"
+SHOP_272,"Gutmann, Koelpin and Mitchell"
+SHOP_273,Hintz LLC
+SHOP_274,Hoeger-Fisher
+SHOP_275,Feeney Group
+SHOP_276,Zieme Inc
+SHOP_277,"Cormier, Balistreri and Okuneva"
+SHOP_278,Osinski and Sons
+SHOP_279,Kassulke and Sons
+SHOP_280,Altenwerth-Abshire
+SHOP_281,"Reynolds, Schmitt and Cummerata"
+SHOP_282,Hudson-Romaguera
+SHOP_283,Yost LLC
+SHOP_284,"Bailey, Lebsack and Ebert"
+SHOP_285,Herzog-Lynch
+SHOP_286,"Howell, Lynch and Homenick"
+SHOP_287,"Hauck, Wyman and Beahan"
+SHOP_288,McCullough and Sons
+SHOP_289,"Beatty, Luettgen and Parker"
+SHOP_290,Effertz-Mayert
+SHOP_291,Beahan-Funk
+SHOP_292,"Quigley, Fahey and Bogan"
+SHOP_293,"Wolff, Boehm and Hirthe"
+SHOP_294,Erdmaan Group
+SHOP_295,Koss Group
+SHOP_296,Lebsack-Ankunding
+SHOP_297,"O'Connell, Kris and Ziemann"
+SHOP_298,Maggio-Corkery
+SHOP_299,Lebsack Inc
+SHOP_300,Botsford Inc
+SHOP_301,Mueller-Turner
+SHOP_302,"Weissnat, Hilll and Ritchie"
+SHOP_303,"Corkery, Grady and Waelchi"
+SHOP_304,Zemlak-Collins
+SHOP_305,Ritchie and Sons
+SHOP_306,"Nolan, Gibson and Davis"
+SHOP_307,"Rohan, Bosco and Huels"
+SHOP_308,Heidenreich and Sons
+SHOP_309,Hahn-Gleichner
+SHOP_310,Turner-Labadie
+SHOP_311,"Abshire, McClure and Konopelski"
+SHOP_312,Cartwright Group
+SHOP_313,Schuppe Group
+SHOP_314,Brakus-Cummings
+SHOP_315,Mayert-Lang
+SHOP_316,Labadie-McKenzie
+SHOP_317,"Boyer, West and Harris"
+SHOP_318,Kreiger-Trantow
+SHOP_319,"Morissette, Ryan and Legros"
+SHOP_320,Hansen LLC
+SHOP_321,"Cassin, Medhurst and Feeney"
+SHOP_322,"Nicolas, Blanda and Hagenes"
+SHOP_323,"Kertzmann, Deckow and Robel"
+SHOP_324,"Emard, Weissnat and Hickle"
+SHOP_325,"Jacobs, Stracke and Mosciski"
+SHOP_326,"Hahn, Schamberger and Lindgren"
+SHOP_327,Gerlach-Dooley
+SHOP_328,Kuvalis Inc
+SHOP_329,Bailey-Kessler
+SHOP_330,Bernhard-Christiansen
+SHOP_331,"Doyle, Hamill and Jacobi"
+SHOP_332,"Wunsch, Wunsch and Satterfield"
+SHOP_333,"Mayert, Hirthe and Littel"
+SHOP_334,Wilderman LLC
+SHOP_335,Herzog-Abshire
+SHOP_336,O'Connell and Sons
+SHOP_337,Bode and Sons
+SHOP_338,"Orn, Stark and Wintheiser"
+SHOP_339,"Rutherford, Schneider and Herzog"
+SHOP_340,Hirthe Group
+SHOP_341,Stamm-Wunsch
+SHOP_342,Zieme Group
+SHOP_343,Quigley LLC
+SHOP_344,"Stanton, Considine and Ferry"
+SHOP_345,O'Kon Holdings
+SHOP_346,"White, Spencer and Hilpert"
+SHOP_347,"Prohaska, Franecki and Spinka"
+SHOP_348,"Kuphal, Goyette and Runolfsdottir"
+SHOP_349,Kihn-Williamson
+SHOP_350,Yost-Crooks
+SHOP_351,Lang-Lesch
+SHOP_352,"Hoeger, Harber and Heaney"
+SHOP_353,Corwin-Padberg
+SHOP_354,MacGyver-Ullrich
+SHOP_355,Ankunding-Yundt
+SHOP_356,Raynor-Deckow
+SHOP_357,Paucek-Weissnat
+SHOP_358,Reichel Group
+SHOP_359,Flatley-Rice
+SHOP_360,"Conroy, Luettgen and Kris"
+SHOP_361,"Gottlieb, Bahringer and Kunze"
+SHOP_362,Graham-Shields
+SHOP_363,Mayer LLC
+SHOP_364,Reynolds and Sons
+SHOP_365,"Stark, Armstrong and Graham"
+SHOP_366,"Crona, Reichel and Abernathy"
+SHOP_367,O'Keefe-Murazik
+SHOP_368,Klein Inc
+SHOP_369,Rippin Holdings
+SHOP_370,"Rath, Considine and Quigley"
+SHOP_371,Turcotte and Sons
+SHOP_372,Mayer Group
+SHOP_373,Green-Leuschke
+SHOP_374,Keebler and Sons
+SHOP_375,"Crooks, McClure and O'Keefe"
+SHOP_376,"Muller, Nader and Windler"
+SHOP_377,"Lind, McKenzie and Zemlak"
+SHOP_378,"Ritchie, Brekke and Smith"
+SHOP_379,"Gibson, Wyman and Sawayn"
+SHOP_380,"Bogan, Okuneva and Kovacek"
+SHOP_381,Lindgren Inc
+SHOP_382,Gislason-Powlowski
+SHOP_383,O'Kon Group
+SHOP_384,Ledner LLC
+SHOP_385,Altenwerth-Langosh
+SHOP_386,Rippin Group
+SHOP_387,Cole Group
+SHOP_388,Mueller-Legros
+SHOP_389,Crooks-Brakus
+SHOP_390,Bailey Inc
+SHOP_391,Brekke Inc
+SHOP_392,Tromp-Mohr
+SHOP_393,Bechtelar and Sons
+SHOP_394,Bradtke-Terry
+SHOP_395,Erdman Group
+SHOP_396,Kreiger-Moen
+SHOP_397,Schultz Group
+SHOP_398,Wintheiser Inc
+SHOP_399,"Schamberger, Marvin and Rutherford"
+SHOP_400,Bayer-Beer
+SHOP_401,Shields and Children
+SHOP_402,"Rippin, Wunsch and Bode"
+SHOP_403,"Cartwright, Raynor and Koss"
+SHOP_404,Medhurst-Cartwright
+SHOP_405,Johnson LLC
+SHOP_406,Larkin-Cummings
+SHOP_407,"Collins, Dach and Robel"
+SHOP_408,Nikolaus LLC
+SHOP_409,Ankunding Inc
+SHOP_410,Sipes-Shanahan
+SHOP_411,Rogahn Group
+SHOP_412,Smith-Adams
+SHOP_413,"Lemke, Okuneva and Cormier"
+SHOP_414,Moore and Sons
+SHOP_415,"Kiehn, Stiedemann and Littel"
+SHOP_416,"Considine, Schulist and Russel"
+SHOP_417,Harber-Collins
+SHOP_418,"Haley, Anderson and Cummings"
+SHOP_419,Champlin and Sons
+SHOP_420,"Grady, Weissnat and Gerlach"
+SHOP_421,Heathcote-Dibbert
+SHOP_422,Stanton Inc
+SHOP_423,Gorczany LLC
+SHOP_424,"Schmidt, Dietrich and Schinner"
+SHOP_425,"West, Jones and Heidenreich"
+SHOP_426,Runte-Lowe
+SHOP_427,Grimes-Reilly
+SHOP_428,"Streich, Feil and Batz"
+SHOP_429,Kshlerin-McLaughlin
+SHOP_430,Thompson-McGlynn
+SHOP_431,Herman-Sporer
+SHOP_432,Upton-Huels
+SHOP_433,"Hilll, Goldner and Kessler"
+SHOP_434,Turner and Sons
+SHOP_435,Johnston and Sons
+SHOP_436,"Zemlak, Hayes and Feil"
+SHOP_437,"Nolan, Mohr and Blick"
+SHOP_438,"Weber, Conroy and Fay"
+SHOP_439,"Dickinson, Fisher and Padberg"
+SHOP_440,Huel-Rippin
+SHOP_441,Carter and Sons
+SHOP_442,"Kub, Pagac and Gutkowski"
+SHOP_443,Abbott-Leannon
+SHOP_444,Becker-McLaughlin
+SHOP_445,Rohan-Spencer
+SHOP_446,Hickle Inc
+SHOP_447,Williamson-Hartmann
+SHOP_448,Marks-Kuhn
+SHOP_449,Durgan-Haag
+SHOP_450,Green-Pollich
+SHOP_451,"Marvin, Wintheiser and Schaefer"
+SHOP_452,Hegmann Inc
+SHOP_453,"McDermott, Bernier and Leuschke"
+SHOP_454,Turner-Pouros
+SHOP_455,Gerhold LLC
+SHOP_456,Hansen Inc
+SHOP_457,Schaefer-Hoppe
+SHOP_458,Von Group
+SHOP_459,Bahringer-Quitzon
+SHOP_460,Greenholt-Conroy
+SHOP_461,Fritsch-Cruickshank
+SHOP_462,Purdy Group
+SHOP_463,Reichert Group
+SHOP_464,Franecki-Veum
+SHOP_465,"Corwin, Schoen and Torphy"
+SHOP_466,Jaskolski and Sons
+SHOP_467,Braun-Borer
+SHOP_468,Predovic-Kerluke
+SHOP_469,McGlynn Inc
+SHOP_470,Hilll-Grady
+SHOP_471,Mitchell and Sons
+SHOP_472,Bashirian Inc
+SHOP_473,Hahn Inc
+SHOP_474,Zemlak-O'Hara
+SHOP_475,Kessler Group
+SHOP_476,"Kilback, Harvey and Corwin"
+SHOP_477,"Keeling, Romaguera and Schuster"
+SHOP_478,"Lueilwitz, Kilback and Sawayn"
+SHOP_479,"Cormier, Brakus and Lehner"
+SHOP_480,Hirthe LLC
+SHOP_481,"Medhurst, Flatley and Rempel"
+SHOP_482,Greenfelder LLC
+SHOP_483,"Veum, Steuber and Friesen"
+SHOP_484,"Smitham, Lesch and Padberg"
+SHOP_485,Jacobs-Wiza
+SHOP_486,O'Kon-Cummings
+SHOP_487,"Bergnaum, Dicki and Cormier"
+SHOP_488,Schmidt-Rowe
+SHOP_489,Deckow-Braun
+SHOP_490,"Gutmann, Paucek and Barton"
+SHOP_491,"Crist, Morar and Block"
+SHOP_492,"Stroman, Legros and Towne"
+SHOP_493,Johnson Group
+SHOP_494,Adams Inc
+SHOP_495,Torp-Bailey
+SHOP_496,Gerhold-Kiehn
+SHOP_497,"Sanford, Streich and O'Conner"
+SHOP_498,"Cole, Gottlieb and Klocko"
+SHOP_499,Kohler-Hauck
+SHOP_500,Bogan Inc

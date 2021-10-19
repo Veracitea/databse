@@ -13,3 +13,10 @@ CREATE TABLE Shop(
    Shop_id VARCHAR(10) NOT NULL PRIMARY KEY
   ,name    VARCHAR(40) NOT NULL
 );
+
+
+CREATE TABLE Product_Type(
+   Product_Type_id        VARCHAR(55) NOT NULL PRIMARY KEY
+  ,description            VARCHAR(55) NOT NULL
+  ,parent_product_type_id VARCHAR(55) NULL
+);
