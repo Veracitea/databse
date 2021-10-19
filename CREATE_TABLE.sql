@@ -30,3 +30,4 @@ CREATE TABLE restricted_to_sell(
    ,FOREIGN KEY (Shop_id) REFERENCES Shop(Shop_id)
    ON DELETE CASCADE ON UPDATE CASCADE
 );
+-----------------------------------------------------------------------------------------------------------------------------
