@@ -72,3 +72,10 @@ CREATE TABLE Invoice(
   ,Order_id       VARCHAR(55) NOT NULL
   UNIQUE (Order_id)
 );
+
+CREATE TABLE Order(
+   Order_id    VARCHAR(55) NOT NULL PRIMARY KEY
+  ,date        DATETIME  NOT NULL
+  ,status      VARCHAR(55) NOT NULL
+  ,Customer_id INT  NOT NULL
+);
