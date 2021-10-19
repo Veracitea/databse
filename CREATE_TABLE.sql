@@ -79,3 +79,16 @@ CREATE TABLE Order(
   ,status      VARCHAR(55) NOT NULL
   ,Customer_id INT  NOT NULL
 );
+
+CREATE TABLE Order_item(
+   Order_id    VARCHAR(55) NOT NULL
+  ,seq_id      INT  NOT NULL
+  ,unit_price  INT  NOT NULL
+  ,quantity    INT  NOT NULL
+  ,status      VARCHAR(55) NOT NULL
+  ,Customer_id INT  NOT NULL
+  ,Shipment_id VARCHAR(55)
+  ,Product_id  VARCHAR(55) NOT NULL
+  ,PRIMARY KEY(Order_id,seq_id)
+  ,UNIQUE (Order_id, Product_id)
+);
