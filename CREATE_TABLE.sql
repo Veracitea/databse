@@ -38,3 +38,16 @@ CREATE TABLE Photo(
   ,Product_ID VARCHAR(55) NOT NULL
   UNIQUE (image_url, Product_ID)
 );
+
+CREATE TABLE Product(
+   Product_id      VARCHAR(55) NOT NULL PRIMARY KEY
+  ,name            VARCHAR(55) NOT NULL
+  ,color           VARCHAR(55) NOT NULL
+  ,size            VARCHAR(55) NOT NULL
+  ,price           INTEGER  NOT NULL
+  ,description     VARCHAR(55) NOT NULL
+  ,Shop_id         VARCHAR(55) NOT NULL
+  ,Product_Type_id VARCHAR(55) NOT NULL
+  UNIQUE (Shop_id, name, color, size)
+  UNIQUE (description)
+);
