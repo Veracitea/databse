@@ -31,3 +31,9 @@ CREATE TABLE restricted_to_sell(
    ON DELETE CASCADE ON UPDATE CASCADE
 );
 -----------------------------------------------------------------------------------------------------------------------------
+
+CREATE TABLE mytable(
+   Photo_ID   VARCHAR(55) NOT NULL PRIMARY KEY
+  ,image_url  VARCHAR(2000) NOT NULL
+  ,Product_ID VARCHAR(55) NOT NULL
+);
