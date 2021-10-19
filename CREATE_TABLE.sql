@@ -60,7 +60,7 @@ CREATE TABLE Shipment(
 );
 
 CREATE TABLE CreditCard(
-   CreditCard_number VARCHAR(55) NOT NULL PRIMARY KEY
+   CreditCard_number INT NOT NULL PRIMARY KEY
   ,ExpireDate        DATETIME  NOT NULL
   ,Customer_id       INT  NOT NULL
 );
@@ -91,4 +91,12 @@ CREATE TABLE Order_item(
   ,Product_id  VARCHAR(55) NOT NULL
   ,PRIMARY KEY(Order_id,seq_id)
   ,UNIQUE (Order_id, Product_id)
+);
+
+CREATE TABLE Payment(
+   Payment_id        VARCHAR(55) NOT NULL PRIMARY KEY
+  ,date              DATETIME  NOT NULL
+  ,amount            INT  NOT NULL
+  ,CreditCard_number INT  NOT NULL
+  ,Invoice_number    VARCHAR(55) NOT NULL
 );
