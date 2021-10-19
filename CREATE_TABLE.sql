@@ -32,8 +32,9 @@ CREATE TABLE restricted_to_sell(
 );
 -----------------------------------------------------------------------------------------------------------------------------
 
-CREATE TABLE mytable(
+CREATE TABLE Photo(
    Photo_ID   VARCHAR(55) NOT NULL PRIMARY KEY
   ,image_url  VARCHAR(2000) NOT NULL
   ,Product_ID VARCHAR(55) NOT NULL
+  UNIQUE (image_url, Product_ID)
 );
