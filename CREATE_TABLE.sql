@@ -64,3 +64,11 @@ CREATE TABLE CreditCard(
   ,ExpireDate        DATETIME  NOT NULL
   ,Customer_id       INT  NOT NULL
 );
+
+CREATE TABLE Invoice(
+   Invoice_number VARCHAR(55) NOT NULL PRIMARY KEY
+  ,status         VARCHAR(55) NOT NULL
+  ,date           DATETIME  NOT NULL
+  ,Order_id       VARCHAR(55) NOT NULL
+  UNIQUE (Order_id)
+);
