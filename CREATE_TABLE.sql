@@ -51,3 +51,10 @@ CREATE TABLE Product(
   UNIQUE (Shop_id, name, color, size)
   UNIQUE (description)
 );
+
+CREATE TABLE Shipment(
+   Shipment_id     VARCHAR(55) NOT NULL PRIMARY KEY
+  ,tracking_number VARCHAR(55) NOT NULL
+  ,date            DATETIME  NOT NULL
+  UNIQUE (tracking_number)
+);
