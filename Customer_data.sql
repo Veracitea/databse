@@ -1,3 +1,4 @@
+INSERT INTO Customer(Customer_id,email,password,username,address,phone_number) VALUES (1,'fbenzing0@umich.edu','Qwerty','mknoble0','8721 Nelson Alley','9386816520');
 INSERT INTO Customer(Customer_id,email,password,username,address,phone_number) VALUES (2,'qgurton1@usa.gov','DVMgir','cmactrusty1','24 Donald Road','9871270500');
 INSERT INTO Customer(Customer_id,email,password,username,address,phone_number) VALUES (3,'bmacartney2@reuters.com','qwerty1234','vbarling2','99881 Thackeray Park','7868126927');
 INSERT INTO Customer(Customer_id,email,password,username,address,phone_number) VALUES (4,'kcoke3@google.com','QWERTY','mjentet3','56 Eastlawn Terrace','7215806703');
