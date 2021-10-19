@@ -8,3 +8,8 @@ CREATE TABLE Customer(
     PRIMARY KEY (Customer_id),
     UNIQUE (username),
 );
+
+CREATE TABLE Shop(
+   Shop_id VARCHAR(8) NOT NULL PRIMARY KEY
+  ,name    VARCHAR(38) NOT NULL
+);
