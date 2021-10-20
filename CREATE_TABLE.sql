@@ -32,13 +32,6 @@ CREATE TABLE restricted_to_sell(
 );
 -----------------------------------------------------------------------------------------------------------------------------
 
-CREATE TABLE Photo(
-   Photo_ID   VARCHAR(55) NOT NULL PRIMARY KEY
-  ,image_url  VARCHAR(2000) NOT NULL
-  ,Product_ID VARCHAR(55) NOT NULL
-  ,UNIQUE (image_url, Product_ID)
-   
-);
 
 CREATE TABLE Product(
    Product_id      VARCHAR(55) NOT NULL PRIMARY KEY
@@ -47,10 +40,23 @@ CREATE TABLE Product(
   ,size            VARCHAR(55) NOT NULL
   ,price           INTEGER  NOT NULL
   ,description     VARCHAR(55) NOT NULL
-  ,Shop_id         VARCHAR(55) NOT NULL
+  ,Shop_id         VARCHAR(10) NOT NULL
   ,Product_Type_id VARCHAR(55) NOT NULL
   ,UNIQUE (Shop_id, name, color, size)
   ,UNIQUE (description)
+   ,FOREIGN KEY (Shop_id) REFERENCES Shop(Shop_id)
+   ON DELETE CASCADE ON UPDATE CASCADE
+   ,FOREIGN KEY (Product_Type_id) REFERENCES Product_Type(Product_Type_id)
+   ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+CREATE TABLE Photo(
+   Photo_ID   VARCHAR(55) NOT NULL PRIMARY KEY
+  ,image_url  VARCHAR(2000) NOT NULL
+  ,Product_ID VARCHAR(55) NOT NULL
+  ,UNIQUE (image_url, Product_ID)
+   ,FOREIGN KEY (Product_ID) REFERENCES Product(Product_id)
+   ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 CREATE TABLE Shipment(
@@ -64,6 +70,18 @@ CREATE TABLE CreditCard(
    CreditCard_number INT NOT NULL PRIMARY KEY
   ,ExpireDate        DATETIME  NOT NULL
   ,Customer_id       INT  NOT NULL
+   ,FOREIGN KEY (Customer_id) REFERENCES Customer(Customer_id)
+   ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+
+CREATE TABLE Order(
+   Order_id    VARCHAR(55) NOT NULL PRIMARY KEY
+  ,date        DATETIME  NOT NULL
+  ,status      VARCHAR(55) NOT NULL
+  ,Customer_id INT  NOT NULL
+   ,FOREIGN KEY (Customer_id) REFERENCES Customer(Customer_id)
+   ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 CREATE TABLE Invoice(
@@ -72,14 +90,10 @@ CREATE TABLE Invoice(
   ,date           DATETIME  NOT NULL
   ,Order_id       VARCHAR(55) NOT NULL
   ,UNIQUE (Order_id)
+   ,FOREIGN KEY (Order_id) REFERENCES Order(Order_id)
+   ON DELETE CASCADE ON UPDATE CASCADE
 );
 
-CREATE TABLE Order(
-   Order_id    VARCHAR(55) NOT NULL PRIMARY KEY
-  ,date        DATETIME  NOT NULL
-  ,status      VARCHAR(55) NOT NULL
-  ,Customer_id INT  NOT NULL
-);
 
 CREATE TABLE Order_item(
    Order_id    VARCHAR(55) NOT NULL
@@ -92,6 +106,14 @@ CREATE TABLE Order_item(
   ,Product_id  VARCHAR(55) NOT NULL
   ,PRIMARY KEY(Order_id,seq_id)
   ,UNIQUE (Order_id, Product_id)
+   ,FOREIGN KEY (Order_id) REFERENCES Order(Order_id)
+   ON DELETE CASCADE ON UPDATE CASCADE
+   ,FOREIGN KEY (Customer_id) REFERENCES Customer(Customer_id)
+   ON DELETE CASCADE ON UPDATE CASCADE
+   ,FOREIGN KEY (Product_ID) REFERENCES Product(Product_id)
+   ON DELETE CASCADE ON UPDATE CASCADE
+   ,FOREIGN KEY (Shipment_id) REFERENCES Shipment(Shipment_id)
+   ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 CREATE TABLE Payment(
@@ -100,4 +122,8 @@ CREATE TABLE Payment(
   ,amount            INT  NOT NULL
   ,CreditCard_number INT  NOT NULL
   ,Invoice_number    VARCHAR(55) NOT NULL
+   ,FOREIGN KEY (CreditCard_number) REFERENCES CreditCard(CreditCard_number)
+   ON DELETE CASCADE ON UPDATE CASCADE
+   ,FOREIGN KEY (Invoice_number) REFERENCES Invoice(Invoice_number)
+   ON DELETE CASCADE ON UPDATE CASCADE
 );
