@@ -36,7 +36,8 @@ CREATE TABLE Photo(
    Photo_ID   VARCHAR(55) NOT NULL PRIMARY KEY
   ,image_url  VARCHAR(2000) NOT NULL
   ,Product_ID VARCHAR(55) NOT NULL
-  UNIQUE (image_url, Product_ID)
+  ,UNIQUE (image_url, Product_ID)
+   
 );
 
 CREATE TABLE Product(
@@ -48,15 +49,15 @@ CREATE TABLE Product(
   ,description     VARCHAR(55) NOT NULL
   ,Shop_id         VARCHAR(55) NOT NULL
   ,Product_Type_id VARCHAR(55) NOT NULL
-  UNIQUE (Shop_id, name, color, size)
-  UNIQUE (description)
+  ,UNIQUE (Shop_id, name, color, size)
+  ,UNIQUE (description)
 );
 
 CREATE TABLE Shipment(
    Shipment_id     VARCHAR(55) NOT NULL PRIMARY KEY
   ,tracking_number VARCHAR(55) NOT NULL
   ,date            DATETIME  NOT NULL
-  UNIQUE (tracking_number)
+  ,UNIQUE (tracking_number)
 );
 
 CREATE TABLE CreditCard(
@@ -70,7 +71,7 @@ CREATE TABLE Invoice(
   ,status         VARCHAR(55) NOT NULL
   ,date           DATETIME  NOT NULL
   ,Order_id       VARCHAR(55) NOT NULL
-  UNIQUE (Order_id)
+  ,UNIQUE (Order_id)
 );
 
 CREATE TABLE Order(
