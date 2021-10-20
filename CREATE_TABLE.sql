@@ -30,7 +30,6 @@ CREATE TABLE restricted_to_sell(
    ,FOREIGN KEY (Shop_id) REFERENCES Shop(Shop_id)
    ON DELETE CASCADE ON UPDATE CASCADE
 );
------------------------------------------------------------------------------------------------------------------------------
 
 
 CREATE TABLE Product(
@@ -74,6 +73,7 @@ CREATE TABLE CreditCard(
    ON DELETE CASCADE ON UPDATE CASCADE
 );
 
+-----------------------------------------------------------------------------------------------------------------------------
 
 CREATE TABLE Order(
    Order_id    VARCHAR(55) NOT NULL PRIMARY KEY
@@ -83,6 +83,8 @@ CREATE TABLE Order(
    ,FOREIGN KEY (Customer_id) REFERENCES Customer(Customer_id)
    ON DELETE CASCADE ON UPDATE CASCADE
 );
+--order is keyword issue
+-----------------------------------------------------------------------------------------------------------------------------
 
 CREATE TABLE Invoice(
    Invoice_number VARCHAR(55) NOT NULL PRIMARY KEY
@@ -90,10 +92,11 @@ CREATE TABLE Invoice(
   ,date           DATETIME  NOT NULL
   ,Order_id       VARCHAR(55) NOT NULL
   ,UNIQUE (Order_id)
-   ,FOREIGN KEY (Order_id) REFERENCES Order(Order_id)
+   ,FOREIGN KEY (Order_id) REFERENCES Order(Order_id)   
    ON DELETE CASCADE ON UPDATE CASCADE
 );
 
+-----------------------------------------------------------------------------------------------------------------------------
 
 CREATE TABLE Order_item(
    Order_id    VARCHAR(55) NOT NULL
@@ -108,14 +111,14 @@ CREATE TABLE Order_item(
   ,UNIQUE (Order_id, Product_id)
    ,FOREIGN KEY (Order_id) REFERENCES Order(Order_id)
    ON DELETE CASCADE ON UPDATE CASCADE
-   ,FOREIGN KEY (Customer_id) REFERENCES Customer(Customer_id)
-   ON DELETE CASCADE ON UPDATE CASCADE
-   ,FOREIGN KEY (Product_ID) REFERENCES Product(Product_id)
+   ,FOREIGN KEY (Product_id) REFERENCES Product(Product_id)
    ON DELETE CASCADE ON UPDATE CASCADE
    ,FOREIGN KEY (Shipment_id) REFERENCES Shipment(Shipment_id)
    ON DELETE CASCADE ON UPDATE CASCADE
-);
-
+   ,FOREIGN KEY (Customer_id) REFERENCES Customer(Customer_id)
+   ON DELETE CASCADE ON UPDATE CASCADE
+); --cust id fk issue
+-----------------------------------------------------------------------------------------------------------------------------
 CREATE TABLE Payment(
    Payment_id        VARCHAR(55) NOT NULL PRIMARY KEY
   ,date              DATETIME  NOT NULL
@@ -126,4 +129,4 @@ CREATE TABLE Payment(
    ON DELETE CASCADE ON UPDATE CASCADE
    ,FOREIGN KEY (Invoice_number) REFERENCES Invoice(Invoice_number)
    ON DELETE CASCADE ON UPDATE CASCADE
-);
+); --can only choose 1 fk issue
