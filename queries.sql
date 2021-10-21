@@ -26,7 +26,12 @@ ORDER BY Counter DESC;
 --Q3:Return the descriptions of all the 2nd level product types. The product types with no parent
 --will be regarded as 1st level product types and their direct child product types will be
 --regarded as 2nd level. (HK TRY)
-
+--assumption: a product_type cannot have multiple parents
+SELECT description
+FROM Product_Type 
+WHERE parent_product_type_id IN (SELECT product_type_id
+								FROM Product_Type p
+								Where p.parent_product_type_id IS NULL);
 
 --Q4:Find 2 product ids that are ordered together the most. (T)
 
