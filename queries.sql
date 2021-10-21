@@ -13,6 +13,13 @@ AND c.email = 'bmacartney2@reuters.com';
 --Q2:Find the 3 bestselling product type ids in terms of product quantity sold. The products of
 --concerned must be ordered and paid. Whether they have been shipped is irrelevant. (BJ)
 
+SELECT 
+
+SELECT producttypeid , count(*)
+FROM producttype pt, product p, orderitem oi, invoice i
+WHERE pt.
+groupby producttypeid
+
 
 --Q3:Return the descriptions of all the 2nd level product types. The product types with no parent
 --will be regarded as 1st level product types and their direct child product types will be
