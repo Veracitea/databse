@@ -1,9 +1,3 @@
-CREATE TABLE Orders(
-   Order_id    VARCHAR(7) NOT NULL PRIMARY KEY
-  ,date        VARCHAR(14) NOT NULL
-  ,status      VARCHAR(10) NOT NULL
-  ,Customer_id INTEGER  NOT NULL
-);
 INSERT INTO Orders(Order_id,date,status,Customer_id) VALUES ('OI89699','1/1/2021 04:30','completed',443);
 INSERT INTO Orders(Order_id,date,status,Customer_id) VALUES ('OI99484','1/1/2021 02:21','processing',374);
 INSERT INTO Orders(Order_id,date,status,Customer_id) VALUES ('OI60586','1/1/2021 15:34','processing',715);
