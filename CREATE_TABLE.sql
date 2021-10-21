@@ -103,7 +103,6 @@ CREATE TABLE Order_item(
   ,unit_price  INT  NOT NULL
   ,quantity    INT  NOT NULL
   ,status      VARCHAR(55) NOT NULL
-  ,Customer_id INT  NOT NULL
   ,Shipment_id VARCHAR(55)
   ,Product_id  VARCHAR(55) NOT NULL
   ,PRIMARY KEY(Order_id,seq_id)
@@ -113,8 +112,6 @@ CREATE TABLE Order_item(
    ,FOREIGN KEY (Product_id) REFERENCES Product(Product_id)
    ON DELETE CASCADE ON UPDATE CASCADE
    ,FOREIGN KEY (Shipment_id) REFERENCES Shipment(Shipment_id)
-   ON DELETE CASCADE ON UPDATE CASCADE
-   ,FOREIGN KEY (Customer_id) REFERENCES Customer(Customer_id)
    ON DELETE CASCADE ON UPDATE CASCADE
 ); --cust id fk issue
 
