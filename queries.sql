@@ -35,6 +35,16 @@ WHERE parent_product_type_id IN (SELECT product_type_id
 
 --Q4:Find 2 product ids that are ordered together the most. (T)
 
+INSERT INTO Order_item(Order_id,seq_id,unit_price,quantity,status,Shipment_id,Product_id) VALUES ('OI10651',2,13,3,'processing',NULL,'PRODUCT_1');
+
+SELECT TOP 1 c.original_p , c.bought_with, count(*) AS times_together
+FROM(
+    SELECT a.product_id as original_p , b.product_id AS bought_with
+	FROM order_item AS a 
+	INNER JOIN order_item AS b
+	ON a.order_id = b.order_id AND a.product_id != b.product_id) AS c 
+group by c.original_p , c.bought_with
+ORDER BY times_together DESC 
 
 --Q5:Get 3 random customers and return their email addresses. (HAHAHA SIKEEEE)
 
