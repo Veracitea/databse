@@ -113,7 +113,7 @@ CREATE TABLE Order_item(
    ON DELETE CASCADE ON UPDATE CASCADE
    ,FOREIGN KEY (Shipment_id) REFERENCES Shipment(Shipment_id)
    ON DELETE CASCADE ON UPDATE CASCADE
-); --cust id fk issue
+); 
 
 CREATE TABLE Payment(
    Payment_id        VARCHAR(55) NOT NULL PRIMARY KEY
