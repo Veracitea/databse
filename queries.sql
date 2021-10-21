@@ -1,6 +1,7 @@
 --Queries:
 --Q1:Given a customer by an email address, returns the product ids that have been ordered
 --and paid by this customer but not yet shipped. (MJ) - dones
+--assumptions: 'paid' = fully paid
 SELECT Product_id
 FROM Order_item oi, Invoice i, Orders o, Customer c
 WHERE i.status = 'paid' AND oi.Order_id = i.Order_id
