@@ -17,6 +17,26 @@
 -- If an ordered has been paid, either fully or partially, it can no longer be cancelled, i.e., its
 --status cannot be changed to ‘cancelled’.
 
+--HK attempt
+CREATE TRIGGER cancelOrder
+AFTER UPDATE status ON Orders
+REFERENCING OLD TABLE AS Ord
+FOR EACH ROW
+AS
+BEGIN
+  IF EXIST(
+    SELECT * FROM Payment NATURAL JOIN Invoice AS newT --inserts Order_id into payment table
+    WHERE newT.Order_id=Ord.Order_id) --if there's any payment made for the updated Order_id
+  BEGIN
+    RAISEERROR('Cannot cancel, payment was made')
+    ROLLBACK TRANSACTION
+    RETURN
+  END
+  UPDATE Order_item
+  SET status = 'cancelled'
+  WHERE Order_id = Ord.Order_id
+END
+
 --T ATTEMPT NOT CONFIRMED TO BE RIGHT
 CREATE TRIGGER cancelOrder
 AFTER UPDATE status ON Orders
