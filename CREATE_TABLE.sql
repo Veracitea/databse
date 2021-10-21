@@ -122,7 +122,7 @@ CREATE TABLE Payment(
    Payment_id        VARCHAR(55) NOT NULL PRIMARY KEY
   ,date              DATETIME  NOT NULL
   ,amount            INT  NOT NULL
-  ,CreditCard_number INT  NOT NULL
+  ,CreditCard_number VARCHAR(55)  NOT NULL
   ,Invoice_number    VARCHAR(55) NOT NULL
    ,FOREIGN KEY (CreditCard_number) REFERENCES CreditCard(CreditCard_number)
    ON DELETE CASCADE ON UPDATE CASCADE
