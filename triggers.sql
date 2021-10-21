@@ -3,7 +3,7 @@
 --to ‘paid’.
 
 
--- When an order item is shipped, its status is changed from ‘processing’ to ‘shipped’.
+-- When an order item is shipped, its status is changed from ‘processing’ to ‘shipped’. (probably refer to when ship arrives)
 
 
 -- When all the products in an order have been shipped, the order status is changed from
