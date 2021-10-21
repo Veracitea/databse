@@ -84,6 +84,7 @@ CREATE TABLE Orders(
    ON DELETE CASCADE ON UPDATE CASCADE
 );
 --order is keyword issue
+--solved
 -----------------------------------------------------------------------------------------------------------------------------
 
 CREATE TABLE Invoice(
