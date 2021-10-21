@@ -73,7 +73,6 @@ CREATE TABLE CreditCard(
    ON DELETE CASCADE ON UPDATE CASCADE
 );
 
------------------------------------------------------------------------------------------------------------------------------
 
 CREATE TABLE Orders(
    Order_id    VARCHAR(55) NOT NULL PRIMARY KEY
@@ -85,7 +84,6 @@ CREATE TABLE Orders(
 );
 --order is keyword issue
 --solved
------------------------------------------------------------------------------------------------------------------------------
 
 CREATE TABLE Invoice(
    Invoice_number VARCHAR(55) NOT NULL PRIMARY KEY
@@ -93,11 +91,11 @@ CREATE TABLE Invoice(
   ,date           DATETIME  NOT NULL
   ,Order_id       VARCHAR(55) NOT NULL
   ,UNIQUE (Order_id)
-   ,FOREIGN KEY (Order_id) REFERENCES Order(Order_id)   
+   ,FOREIGN KEY (Order_id) REFERENCES Orders(Order_id)   
    ON DELETE CASCADE ON UPDATE CASCADE
 );
 
------------------------------------------------------------------------------------------------------------------------------
+
 
 CREATE TABLE Order_item(
    Order_id    VARCHAR(55) NOT NULL
@@ -110,7 +108,7 @@ CREATE TABLE Order_item(
   ,Product_id  VARCHAR(55) NOT NULL
   ,PRIMARY KEY(Order_id,seq_id)
   ,UNIQUE (Order_id, Product_id)
-   ,FOREIGN KEY (Order_id) REFERENCES Order(Order_id)
+   ,FOREIGN KEY (Order_id) REFERENCES Orders(Order_id)
    ON DELETE CASCADE ON UPDATE CASCADE
    ,FOREIGN KEY (Product_id) REFERENCES Product(Product_id)
    ON DELETE CASCADE ON UPDATE CASCADE
@@ -119,7 +117,7 @@ CREATE TABLE Order_item(
    ,FOREIGN KEY (Customer_id) REFERENCES Customer(Customer_id)
    ON DELETE CASCADE ON UPDATE CASCADE
 ); --cust id fk issue
------------------------------------------------------------------------------------------------------------------------------
+
 CREATE TABLE Payment(
    Payment_id        VARCHAR(55) NOT NULL PRIMARY KEY
   ,date              DATETIME  NOT NULL
