@@ -25,7 +25,7 @@ AS
 BEGIN
   IF EXIST(
     SELECT * FROM Payment NATURAL JOIN Invoice AS newT
-    WHERE newT.Invoice_number=Ord.Order_id)
+    WHERE newT.Order_id=Ord.Order_id)
   BEGIN
     RAISEERROR('Cannot cancel, payment was made')
     ROLLBACK TRANSACTION
