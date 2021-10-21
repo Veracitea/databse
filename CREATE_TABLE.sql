@@ -66,7 +66,7 @@ CREATE TABLE Shipment(
 );
 
 CREATE TABLE CreditCard(
-   CreditCard_number INT NOT NULL PRIMARY KEY
+   CreditCard_number VARCHAR(55) NOT NULL PRIMARY KEY
   ,ExpireDate        DATETIME  NOT NULL
   ,Customer_id       INT  NOT NULL
    ,FOREIGN KEY (Customer_id) REFERENCES Customer(Customer_id)
