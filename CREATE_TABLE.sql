@@ -75,7 +75,7 @@ CREATE TABLE CreditCard(
 
 -----------------------------------------------------------------------------------------------------------------------------
 
-CREATE TABLE Order(
+CREATE TABLE Orders(
    Order_id    VARCHAR(55) NOT NULL PRIMARY KEY
   ,date        DATETIME  NOT NULL
   ,status      VARCHAR(55) NOT NULL
