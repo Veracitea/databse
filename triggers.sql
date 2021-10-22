@@ -41,6 +41,10 @@ BEGIN
   	END;
 END; 
 
+--code to find order id of ppl with orders unpaid
+--select order_id from Orders
+--where order_id not in 
+--(SELECT distinct order_id FROM Payment as p Inner join Invoice as i on i.Invoice_number=p.Invoice_number)
 
 --t ATTEMPT 2 not complete but accepted
 CREATE TRIGGER cancelOrder
