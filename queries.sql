@@ -30,7 +30,7 @@ FROM Product p, Order_item oi, Invoice i
 WHERE p.Product_id = oi.Product_id AND oi.Order_id = i.Order_id AND i.status = 'paid' 
 GROUP BY p.Product_Type_id
 ORDER BY Counter DESC;
-
+--THE ABOVE IS CORRECT AND CHECKED
 
 --Q3:Return the descriptions of all the 2nd level product types. The product types with no parent
 --will be regarded as 1st level product types and their direct child product types will be
