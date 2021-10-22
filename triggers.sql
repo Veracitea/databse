@@ -4,7 +4,8 @@
 
 
 -- When an order item is shipped, its status is changed from ‘processing’ to ‘shipped’. (probably refer to when ship arrives)
-CREATE TRIGGER
+
+CREATE TRIGGER OrderItemShipped
 ON Shipment
 AFTER UPDATE
 AS
