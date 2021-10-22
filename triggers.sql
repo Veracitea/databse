@@ -2,6 +2,55 @@
 -- When the full payment to an invoice is made, the invoice status is changed from ‘issued’
 --to ‘paid’.
 
+CREATE TRIGGER paymentMade
+ON Payment
+AFTER INSERT
+AS
+BEGIN
+	IF EXISTS(SELECT *
+		  FROM inserted AS i, Invoice AS inv
+		  WHERE i.Invoice_id = inv.Invoice_id
+		  AND i.amount > inv.due)
+	BEGIN
+	RAISERROR ('You paid extra...', 16, 1); --may delete this
+	ROLLBACK TRANSACTION
+	RETURN   
+	END;
+	
+	IF (SELECT COUNT(*)
+	    FROM Payment p, inserted i
+	    WHERE i.Invoice_id = p.Invoice_id) = 3
+	    BEGIN
+	    IF EXISTS(SELECT *
+		      FROM inserted i, Invoice inv
+		      WHERE i.Invoice_id = inv.Invoice_id
+		      AND i.amount < inv.due)
+		      BEGIN
+		      RAISERROR ('You did not pay enough for your last payment', 16, 1);
+		      ROLLBACK TRANSACTION
+		      RETURN
+		      END;
+	     END;
+	 IF EXISTS(SELECT *
+		   FROM inserted i, Invoice inv
+		   WHERE i.Invoice_id = inv.Invoice_id
+		   AND i.amount = inv.due)
+	BEGIN
+	UPDATE Invoice
+	SET Invoice.status = 'paid'
+	FROM inserted i
+	WHERE i.Invoice_id = Invoice.Invoice_id
+	END;
+END;
+	
+
+
+
+--count the number of payments made
+SELECT COUNT(*)
+FROM Payment p
+GROUP BY p.Invoice_id
+
 
 -- When an order item is shipped, its status is changed from ‘processing’ to ‘shipped’. (probably refer to when ship arrives)
 
