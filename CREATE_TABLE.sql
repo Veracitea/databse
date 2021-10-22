@@ -90,7 +90,7 @@ CREATE TABLE Invoice(
   ,status         VARCHAR(55) NOT NULL
   ,date           DATETIME  NOT NULL
   ,Order_id       VARCHAR(55) NOT NULL
-  ,due            INTE  NOT NULL
+  ,due            INT  NOT NULL
   ,UNIQUE (Order_id)
    ,FOREIGN KEY (Order_id) REFERENCES Orders(Order_id)   
    ON DELETE CASCADE ON UPDATE CASCADE
