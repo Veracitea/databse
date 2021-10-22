@@ -29,7 +29,7 @@ BEGIN
     	AND inv.Order_id=i.Order_id AND p.Invoice_number=inv.Invoice_number
           )  
 	BEGIN  
-	RAISERROR ('You have already made payment for this order...', 16, 1);  
+	RAISERROR ('You have already made payment for this order...', 16, 1); --may delete this
 	ROLLBACK TRANSACTION
 	RETURN   
 	END
