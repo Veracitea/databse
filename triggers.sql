@@ -4,7 +4,22 @@
 
 
 -- When an order item is shipped, its status is changed from ‘processing’ to ‘shipped’. (probably refer to when ship arrives)
-
+CREATE TRIGGER
+ON Shipment
+AFTER UPDATE
+AS
+BEGIN
+	IF EXISTS (SELECT *
+		   FROM inserted as i, deleted as d
+		   WHERE i.status = 'reached'
+		   AND d.status = 'departed')
+	BEGIN
+	UPDATE Order_item
+  	SET status = 'shipped'
+  	FROM inserted AS i
+  	WHERE Order_item.Shipment_id = i.Shipment_id
+	END;
+END;
 
 -- When all the products in an order have been shipped, the order status is changed from
 --‘processing’ to ‘completed’.
