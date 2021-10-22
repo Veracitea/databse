@@ -96,16 +96,55 @@ GROUP BY email
 HAVING COUNT(Customer_id) > 10);
 
 
+
+
 --Q7: Find out the top sales for each product type for a recommendation system, showing product name and shop.
 --Only products with primary relation to each product type are considered.
-SELECT S.name, p.Product_id
-FROM  Shop S, Product P, (SELECT TOP 3 p.Product_id, SUM(oi.quantity) AS Sales
-						FROM Order_item oi, Product p, Product_Type pt
-						WHERE oi.Product_id = p.Product_id
-						AND p.Product_Type_id = pt.Product_Type_id
-						AND pt.description = 'Apparel Accessories'
-						GROUP BY p.Product_id
-						ORDER BY Sales) AS Top_products
-WHERE P.Product_id = p.Product_id
-AND P.Shop_id = S.Shop_id;
+
+-- Get products purchased per user 
+WITH per_user AS (
+  	SELECT 
+	  order_id,
+	  Product_id,
+	  SUM(quantity) AS per_user_total
+	FROM Order_item
+	GROUP BY order_id , product_id
+),
+
+-- SUM of each product purchased regardless of users
+all_users AS (
+  	SELECT 
+	  product_id,
+	  SUM(per_user_total) AS total_products 
+  	FROM per_user
+  	GROUP BY product_id
+),
+
+-- Combine together with type of product
+with_type AS (
+	SELECT 
+  		all_users.product_id,
+  		Product.product_type_id,
+  		all_users.total_products
+	FROM all_users
+  	LEFT JOIN Product
+  	ON Product.Product_id = all_users.product_id
+),
+
+-- Get the product with highest orders within each product type using a window function
+max_per_id AS (
+  	SELECT 
+  		product_id , 
+  		product_type_id,
+  		total_products,
+  		ROW_NUMBER() OVER (PARTITION BY product_type_id ORDER BY total_products DESC) ROW_NUM
+  	FROM with_type
+)
+
+
+SELECT product_id, product_type_id , total_products
+FROM max_per_id 
+WHERE ROW_NUM = 1
+ORDER BY product_type_id
+
 
