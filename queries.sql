@@ -76,9 +76,27 @@ ORDER BY NEWID();
 --from a query since each time NewID() function is called, a new random uniqueidentifier is generated, where each random value 
 --is different in the select list than the random values in Order By clause. Thus randomizing the extraction of customer rows.
 
+
+
 --Design two queries that are not in the above list. They are evaluated based on the usefulness,
 --complexity, and the interestingness.
 --Q6: Find users who has the same emails or those using same phone numbers (has used the same credit cards multiple times???) 
+SELECT email
+FROM Customer
+GROUP BY email
+HAVING COUNT(Customer_id) > 10;
+
 
 --Q7: Find out the top sales for each product type for a recommendation system, showing product name and shop.
 --Only products with primary relation to each product type are considered.
+SELECT S.name, p.Product_id
+FROM  Shop S, Product P, (SELECT TOP 3 p.Product_id, SUM(oi.quantity) AS Sales
+						FROM Order_item oi, Product p, Product_Type pt
+						WHERE oi.Product_id = p.Product_id
+						AND p.Product_Type_id = pt.Product_Type_id
+						AND pt.description = 'Apparel Accessories'
+						GROUP BY p.Product_id
+						ORDER BY Sales) AS Top_products
+WHERE P.Product_id = p.Product_id
+AND P.Shop_id = S.Shop_id;
+
