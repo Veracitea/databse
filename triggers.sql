@@ -29,7 +29,7 @@ BEGIN
     	AND inv.Order_id=i.Order_id AND p.Invoice_number=inv.Invoice_number
           )  
 	BEGIN  
-	RAISERROR ('asdfghjkl;.', 16, 2);  
+	RAISERROR ('asdfghjkl;.', 16, 1);  
 	ROLLBACK TRANSACTION
 	RETURN   
 	END
