@@ -1,6 +1,8 @@
 --Constraints
 -- When the full payment to an invoice is made, the invoice status is changed from ‘issued’
 --to ‘paid’.
+-- There can be at most 3 payments to an invoice, i.e., if the customer chooses to perform
+--partial payments, the 3rd payment must complete the full amount.
 
 CREATE TRIGGER paymentMade
 ON Payment
@@ -9,7 +11,7 @@ AS
 BEGIN
 	IF EXISTS(SELECT *
 		  FROM inserted AS i, Invoice AS inv
-		  WHERE i.Invoice_id = inv.Invoice_id
+		  WHERE i.invoice_number = inv.invoice_number
 		  AND i.amount > inv.due)
 	BEGIN
 	RAISERROR ('You paid extra...', 16, 1); --may delete this
@@ -19,11 +21,11 @@ BEGIN
 	
 	IF (SELECT COUNT(*)
 	    FROM Payment p, inserted i
-	    WHERE i.Invoice_id = p.Invoice_id) = 3
+	    WHERE i.invoice_number = p.invoice_number) = 3
 	    BEGIN
 	    IF EXISTS(SELECT *
 		      FROM inserted i, Invoice inv
-		      WHERE i.Invoice_id = inv.Invoice_id
+		      WHERE i.invoice_number = inv.invoice_number
 		      AND i.amount < inv.due)
 		      BEGIN
 		      RAISERROR ('You did not pay enough for your last payment', 16, 1);
@@ -33,13 +35,25 @@ BEGIN
 	     END;
 	 IF EXISTS(SELECT *
 		   FROM inserted i, Invoice inv
-		   WHERE i.Invoice_id = inv.Invoice_id
+		   WHERE i.invoice_number = inv.invoice_number
 		   AND i.amount = inv.due)
 	BEGIN
 	UPDATE Invoice
 	SET Invoice.status = 'paid'
 	FROM inserted i
-	WHERE i.Invoice_id = Invoice.Invoice_id
+	WHERE i.invoice_number = Invoice.invoice_number
+    RETURN
+	END;
+    IF EXISTS(SELECT *
+		   FROM inserted i, Invoice inv
+		   WHERE i.invoice_number = inv.invoice_number
+		   AND i.amount < inv.due)
+    BEGIN
+    UPDATE Invoice
+	SET Invoice.due = Invoice.due - i.amount
+    FROM inserted i, Invoice
+    WHERE i.invoice_number = Invoice.invoice_number
+    RETURN
 	END;
 END;
 	
@@ -98,8 +112,7 @@ END;
 		  
 
 
--- There can be at most 3 payments to an invoice, i.e., if the customer chooses to perform
---partial payments, the 3rd payment must complete the full amount.
+
 
 
 -- If an ordered has been paid, either fully or partially, it can no longer be cancelled, i.e., its
