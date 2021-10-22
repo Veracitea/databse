@@ -25,6 +25,28 @@ END;
 -- When all the products in an order have been shipped, the order status is changed from
 --‘processing’ to ‘completed’.
 
+CREATE TRIGGER OrderFulfilled
+ON Order_items
+AFTER UPDATE
+AS
+BEGIN
+	IF EXISTS(SELECT *
+		  FROM Order_items AS oi, inserted AS i
+		  WHERE oi.Order_id = i.Order_id
+		  AND oi.status <> 'shipped')
+	BEGIN
+	RETURN
+	END;
+	BEGIN
+	UPDATE Orders
+	SET status = 'completed'
+	FROM inserted i
+	WHERE Orders.Order_id = i.Order_id
+	END;
+END;
+
+		  
+
 
 -- There can be at most 3 payments to an invoice, i.e., if the customer chooses to perform
 --partial payments, the 3rd payment must complete the full amount.
