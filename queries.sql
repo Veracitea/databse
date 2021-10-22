@@ -80,4 +80,5 @@ ORDER BY NEWID();
 --complexity, and the interestingness.
 --Q6: Find users who has the same emails or those using same phone numbers (has used the same credit cards multiple times???) 
 
---Q7: Find out the top sales for each product type for a recommendation system, showing product name and shop
+--Q7: Find out the top sales for each product type for a recommendation system, showing product name and shop.
+--Only products with primary relation to each product type are considered.
