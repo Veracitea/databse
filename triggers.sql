@@ -40,6 +40,10 @@ BEGIN
   	WHERE Order_item.Order_id = i.Order_id;
   	END;
 END; 
+--code to try update
+--UPDATE Orders
+--SET status = 'cancelled'
+--WHERE Order_id = 'OI76526';
 
 --code to find order id of ppl with orders unpaid
 --select order_id from Orders
