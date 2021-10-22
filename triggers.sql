@@ -4,6 +4,7 @@
 -- There can be at most 3 payments to an invoice, i.e., if the customer chooses to perform
 --partial payments, the 3rd payment must complete the full amount.
 
+--correct
 CREATE TRIGGER paymentMade
 ON Payment
 AFTER INSERT
