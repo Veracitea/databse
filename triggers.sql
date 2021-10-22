@@ -57,6 +57,13 @@ BEGIN
     RETURN
 	END;
 END;
+
+--check 
+--INSERT INTO Payment(Payment_id,date,amount,CreditCard_number,Invoice_number) VALUES ('PAY_358','3/1/2021 4:30',17,'3545065312808460','IN49325700');
+--change payment amount to test, not enough, overshot, partial paymeny, full payment
+--SELECT *
+--FROM Invoice
+--WHERE invoice_number = 'IN49325700'
 	
 
 
@@ -110,6 +117,13 @@ BEGIN
 	END;
 END;
 
+
+--test code
+--UPDATE Order_item
+--SET status = 'shipped'
+--FROM Order_item as oi
+--WHERE oi.Order_id = 'OI89697'
+
 		  
 
 
@@ -152,82 +166,3 @@ END;
 --where order_id not in 
 --(SELECT distinct order_id FROM Payment as p Inner join Invoice as i on i.Invoice_number=p.Invoice_number)
 
---t ATTEMPT 2 not complete but accepted
-CREATE TRIGGER cancelOrder
-ON Orders 
-AFTER UPDATE 
-AS  
-IF EXISTS (SELECT 1 
-    FROM Payment AS p, Invoice AS inv , inserted AS i, deleted AS d
-    WHERE i.status = 'cancelled'
-    AND (d.status = 'processing' OR d.status = 'completed')
-    AND inv.Order_id=i.Order_id AND p.Invoice_number=inv.Invoice_number
-          )  
-BEGIN  
-RAISERROR ('A vendor''s credit rating is too low to accept new purchase orders.', 16, 2);  
-ROLLBACK TRANSACTION
-RETURN   
-END;  
---HK attempt #2
-
-CREATE TRIGGER cancelOrder
-ON Orders
-AFTER UPDATE
-AS
-IF inserted.status <> 'cancelled'
-RETURN;
-BEGIN
-  IF EXISTS(
-    SELECT * 
-    FROM Payment as p JOIN Invoice AS inv ON p.Invoice_number = inv.Invoice_number, inserted AS i, deleted AS d
-    WHERE d.status <> 'cancelled'
-    AND inv.Order_id=i.Order_id)
-  BEGIN
-    RAISEERROR('Cannot cancel, payment was made',16,1)
-    ROLLBACK TRANSACTION
-    RETURN
-  END
-  ELSE
-  BEGIN
-  UPDATE Order_item
-  SET status = 'cancelled'
-  FROM inserted AS i
-  WHERE Order_id = i.Order_id;
-  END;
-END;
-
-
---HK attempt #1
-CREATE TRIGGER cancelOrder
-AFTER UPDATE status ON Orders
-REFERENCING OLD TABLE AS Ord
-FOR EACH ROW
-AS
-BEGIN
-  IF EXIST(
-    SELECT * FROM Payment NATURAL JOIN Invoice AS newT --inserts Order_id into payment table
-    WHERE newT.Order_id=Ord.Order_id) --if there's any payment made for the updated Order_id
-  BEGIN
-    RAISEERROR('Cannot cancel, payment was made')
-    ROLLBACK TRANSACTION
-    RETURN
-  END
-  UPDATE Order_item
-  SET status = 'cancelled'
-  WHERE Order_id = Ord.Order_id
-END
-
---T ATTEMPT NOT CONFIRMED TO BE RIGHT
-CREATE TRIGGER cancelOrder
-AFTER UPDATE status ON Orders
-REFERENCING OLD ROW AS Ord
-AS
-BEGIN
-  IF EXIST(
-    SELECT * FROM Payment NATURAL JOIN Invoice AS newT
-    WHERE newT.Order_id=Ord.Order_id)
-  BEGIN
-    RAISEERROR('Cannot cancel, payment was made')
-    ROLLBACK TRANSACTION
-  END
-END
