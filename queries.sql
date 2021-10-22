@@ -85,6 +85,15 @@ SELECT email
 FROM Customer
 GROUP BY email
 HAVING COUNT(Customer_id) > 10;
+--above not complete, below tested and checked
+--changed code:
+SELECT customer_id, email
+FROM Customer
+WHERE email in (
+SELECT email
+FROM Customer
+GROUP BY email
+HAVING COUNT(Customer_id) > 10);
 
 
 --Q7: Find out the top sales for each product type for a recommendation system, showing product name and shop.
