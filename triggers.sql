@@ -16,6 +16,32 @@
 
 -- If an ordered has been paid, either fully or partially, it can no longer be cancelled, i.e., its
 --status cannot be changed to ‘cancelled’.
+--correct...code?:D
+CREATE TRIGGER cancelOrder
+ON Orders 
+AFTER UPDATE 
+AS
+BEGIN
+	IF EXISTS (SELECT 1 
+    	FROM Payment AS p, Invoice AS inv , inserted AS i, deleted AS d
+    	WHERE i.status = 'cancelled'
+    	AND (d.status <>'cancelled')
+    	AND inv.Order_id=i.Order_id AND p.Invoice_number=inv.Invoice_number
+          )  
+	BEGIN  
+	RAISERROR ('asdfghjkl;.', 16, 2);  
+	ROLLBACK TRANSACTION
+	RETURN   
+	END
+    BEGIN
+  	UPDATE Order_item
+  	SET status = 'cancelled'
+  	FROM inserted AS i
+  	WHERE Order_item.Order_id = i.Order_id;
+  	END;
+END; 
+
+
 --t ATTEMPT 2 not complete but accepted
 CREATE TRIGGER cancelOrder
 ON Orders 
