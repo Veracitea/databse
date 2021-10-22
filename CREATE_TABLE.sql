@@ -62,8 +62,10 @@ CREATE TABLE Shipment(
    Shipment_id     VARCHAR(55) NOT NULL PRIMARY KEY
   ,tracking_number VARCHAR(55) NOT NULL
   ,date            DATETIME  NOT NULL
+  ,status          VARCHAR(55) NOT NULL
   ,UNIQUE (tracking_number)
 );
+
 
 CREATE TABLE CreditCard(
    CreditCard_number VARCHAR(55) NOT NULL PRIMARY KEY
