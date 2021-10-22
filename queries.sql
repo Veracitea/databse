@@ -70,7 +70,8 @@ ORDER BY times_together DESC
 
 SELECT TOP 3 email FROM Customer  
 ORDER BY NEWID();
-
+--checked and correct
+--run multiple times to show randomness in video. Each try will give different emails.
 --explanation for our video: NewId() generates a random GUID or unique identifier which can be used to return randomized rows 
 --from a query since each time NewID() function is called, a new random uniqueidentifier is generated, where each random value 
 --is different in the select list than the random values in Order By clause. Thus randomizing the extraction of customer rows.
