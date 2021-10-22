@@ -78,5 +78,6 @@ ORDER BY NEWID();
 
 --Design two queries that are not in the above list. They are evaluated based on the usefulness,
 --complexity, and the interestingness.
---Q6:ASDFGHJKL;'\
---Q7:
+--Q6: Find users who has the same emails or those using same phone numbers (has used the same credit cards multiple times???) 
+
+--Q7: Find out the top sales for each product type for a recommendation system, showing product name and shop
