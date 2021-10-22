@@ -25,13 +25,14 @@ END;
 -- When all the products in an order have been shipped, the order status is changed from
 --‘processing’ to ‘completed’.
 
+--correct
 CREATE TRIGGER OrderFulfilled
-ON Order_items
+ON Order_item
 AFTER UPDATE
 AS
 BEGIN
 	IF EXISTS(SELECT *
-		  FROM Order_items AS oi, inserted AS i
+		  FROM Order_item AS oi, inserted AS i
 		  WHERE oi.Order_id = i.Order_id
 		  AND oi.status <> 'shipped')
 	BEGIN
