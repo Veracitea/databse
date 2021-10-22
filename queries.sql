@@ -41,6 +41,7 @@ FROM Product_Type
 WHERE parent_product_type_id IN (SELECT product_type_id
 								FROM Product_Type p
 								Where p.parent_product_type_id IS NULL);
+--THE ABOVE IS CORRECT AND CHECKED
 
 --Q4:Find 2 product ids that are ordered together the most. (T)
 
