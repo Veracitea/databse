@@ -123,6 +123,6 @@ CREATE TABLE Payment(
   ,Invoice_number    VARCHAR(55) NOT NULL
    ,FOREIGN KEY (CreditCard_number) REFERENCES CreditCard(CreditCard_number)
    ON DELETE CASCADE ON UPDATE CASCADE
-   ,FOREIGN KEY (Invoice_number) REFERENCES Invoice(Invoice_number)
-   ON DELETE CASCADE ON UPDATE CASCADE
+   --,FOREIGN KEY (Invoice_number) REFERENCES Invoice(Invoice_number)
+   --ON DELETE CASCADE ON UPDATE CASCADE
 ); --can only choose 1 fk issue
