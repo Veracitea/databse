@@ -59,11 +59,11 @@ BEGIN
 END;
 
 --check 
---INSERT INTO Payment(Payment_id,date,amount,CreditCard_number,Invoice_number) VALUES ('PAY_358','3/1/2021 4:30',17,'3545065312808460','IN49325700');
---change payment amount to test, not enough, overshot, partial paymeny, full payment
---SELECT *
---FROM Invoice
---WHERE invoice_number = 'IN49325700'
+INSERT INTO Payment(Payment_id,date,amount,CreditCard_number,Invoice_number) VALUES ('PAY_358','3/1/2021 4:30',17,'3545065312808460','IN49325700');
+-- change payment amount to test, not enough, overshot, partial paymeny, full payment
+SELECT *
+FROM Invoice
+WHERE invoice_number = 'IN49325700'
 	
 
 
@@ -71,7 +71,7 @@ END;
 --count the number of payments made
 SELECT COUNT(*)
 FROM Payment p
-GROUP BY p.Invoice_id
+GROUP BY p.Invoice_id;
 
 
 -- When an order item is shipped, its status is changed from ‘processing’ to ‘shipped’. (probably refer to when ship arrives)

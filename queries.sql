@@ -8,7 +8,8 @@ WHERE i.status = 'paid' AND oi.Order_id = i.Order_id
 AND NOT oi.status = 'shipped'
 AND oi.Order_id = o.Order_id
 AND o.Customer_id = c.Customer_id
-AND c.email = 'bmacartney2@reuters.com';
+AND c.email = 'rwillemanju@newsvine.com';
+--bmacartney2@reuters.com (for alternate case)
 
 --CORRECT AND CHECKED:
 SELECT Product_id
@@ -36,7 +37,7 @@ ORDER BY Counter DESC;
 --will be regarded as 1st level product types and their direct child product types will be
 --regarded as 2nd level. (HK TRY)
 --assumption: a product_type cannot have multiple parents
-SELECT description
+SELECT DISTINCT(description)
 FROM Product_Type 
 WHERE parent_product_type_id IN (SELECT product_type_id
 								FROM Product_Type p
@@ -80,20 +81,22 @@ ORDER BY NEWID();
 
 --Design two queries that are not in the above list. They are evaluated based on the usefulness,
 --complexity, and the interestingness.
---Q6: Find users who has the same emails or those using same phone numbers (has used the same credit cards multiple times???) 
+--Q6: Find users who has the same emails for different customers 
 SELECT email
 FROM Customer
 GROUP BY email
 HAVING COUNT(Customer_id) > 10;
 --above not complete, below tested and checked
 --changed code:
+
 SELECT customer_id, email
 FROM Customer
-WHERE email in (
-SELECT email
-FROM Customer
-GROUP BY email
-HAVING COUNT(Customer_id) > 10);
+WHERE email IN (
+	SELECT email
+	FROM Customer
+	GROUP BY email
+	HAVING COUNT(Customer_id) > 10
+);
 
 
 
@@ -145,6 +148,4 @@ max_per_id AS (
 SELECT product_id, product_type_id , total_products
 FROM max_per_id 
 WHERE ROW_NUM = 1
-ORDER BY product_type_id
-
-
+ORDER BY total_products desc;
