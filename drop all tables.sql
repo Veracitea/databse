@@ -18,6 +18,6 @@ DROP TABLE Orders;
 
 DROP TABLE Invoice;
 
-DROP Order_item; 
+DROP TABLE Order_item; 
 
 DROP TABLE Payment;
