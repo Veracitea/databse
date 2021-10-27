@@ -1,3 +1,4 @@
+Product_Type,,
 Product_Type_id,description,parent_product_type_id
 TYPE_1,Arts and Crafts Supplies,NULL
 TYPE_2,Baby and Child Products,NULL
