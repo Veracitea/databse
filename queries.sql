@@ -10,15 +10,9 @@ AND oi.Order_id = o.Order_id
 AND o.Customer_id = c.Customer_id
 AND c.email = 'rwillemanju@newsvine.com';
 --bmacartney2@reuters.com (for alternate case)
+--'vstallondm@bizjournals.com'
+--CORRECT AND CHECKED
 
---CORRECT AND CHECKED:
-SELECT Product_id
-FROM Order_item oi, Invoice i, Orders o, Customer c
-WHERE i.status = 'paid' AND oi.Order_id = i.Order_id
-AND NOT oi.status = 'shipped'
-AND oi.Order_id = o.Order_id
-AND o.Customer_id = c.Customer_id
-AND c.email = 'vstallondm@bizjournals.com'
 
 --Q2:Find the 3 bestselling product type ids in terms of product quantity sold. The products of
 --concerned must be ordered and paid. Whether they have been shipped is irrelevant. (BJ)
@@ -48,15 +42,6 @@ WHERE parent_product_type_id IN (SELECT product_type_id
 --do query b4 inserting
 INSERT INTO Order_item(Order_id,seq_id,unit_price,quantity,status,Shipment_id,Product_id) VALUES ('OI10651',2,13,3,'processing',NULL,'PRODUCT_1');
 --doquery after inserting
-SELECT TOP 1 c.original_p , c.bought_with, count(*) AS times_together
-FROM(
-    SELECT a.product_id as original_p , b.product_id AS bought_with
-	FROM order_item AS a 
-	INNER JOIN order_item AS b
-	ON a.order_id = b.order_id AND a.product_id != b.product_id) AS c 
-group by c.original_p , c.bought_with
-ORDER BY times_together DESC 
-
 --appended version checked and correct (can change top 1 to top 5 to show the appended object)
 SELECT TOP 1 c.original_p , c.bought_with, count(*) AS times_together
 FROM(
@@ -82,11 +67,6 @@ ORDER BY NEWID();
 --Design two queries that are not in the above list. They are evaluated based on the usefulness,
 --complexity, and the interestingness.
 --Q6: Find users who has the same emails for different customers 
-SELECT email
-FROM Customer
-GROUP BY email
-HAVING COUNT(Customer_id) > 10;
---above not complete, below tested and checked
 --changed code:
 
 SELECT customer_id, email
