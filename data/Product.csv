@@ -1,3 +1,4 @@
+Product,,,,,,,
 Product_id,name,color,size,price,description,Shop_id,Product_Type_id
 PRODUCT_988,Abietenella Moss,Fuscia,medium,13,Abietenella Moss Fuscia medium  $13,SHOP_1,TYPE_5
 PRODUCT_212,Longleaf Groundcherry,Khaki,medium,14,Longleaf Groundcherry Khaki medium  $14,SHOP_1,TYPE_5
