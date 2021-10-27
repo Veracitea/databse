@@ -1,3 +1,4 @@
+Payment,,,,
 Payment_id,date,amount,CreditCard_number,Invoice_number
 PAY_1,3/1/2021 4:30,39,4911593574635410000,IN82536826
 PAY_2,3/1/2021 2:21,104,5002358977864180,IN04857840
