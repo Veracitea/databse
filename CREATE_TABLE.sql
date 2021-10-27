@@ -62,8 +62,10 @@ CREATE TABLE Shipment(
    Shipment_id     VARCHAR(55) NOT NULL PRIMARY KEY
   ,tracking_number VARCHAR(55) NOT NULL
   ,date            DATETIME  NOT NULL
+  ,status          VARCHAR(55) NOT NULL
   ,UNIQUE (tracking_number)
 );
+
 
 CREATE TABLE CreditCard(
    CreditCard_number VARCHAR(55) NOT NULL PRIMARY KEY
@@ -90,6 +92,7 @@ CREATE TABLE Invoice(
   ,status         VARCHAR(55) NOT NULL
   ,date           DATETIME  NOT NULL
   ,Order_id       VARCHAR(55) NOT NULL
+  ,due            INT  NOT NULL
   ,UNIQUE (Order_id)
    ,FOREIGN KEY (Order_id) REFERENCES Orders(Order_id)   
    ON DELETE CASCADE ON UPDATE CASCADE
@@ -123,6 +126,6 @@ CREATE TABLE Payment(
   ,Invoice_number    VARCHAR(55) NOT NULL
    ,FOREIGN KEY (CreditCard_number) REFERENCES CreditCard(CreditCard_number)
    ON DELETE CASCADE ON UPDATE CASCADE
-   ,FOREIGN KEY (Invoice_number) REFERENCES Invoice(Invoice_number)
-   ON DELETE CASCADE ON UPDATE CASCADE
+   --,FOREIGN KEY (Invoice_number) REFERENCES Invoice(Invoice_number)
+   --ON DELETE CASCADE ON UPDATE CASCADE
 ); --can only choose 1 fk issue
