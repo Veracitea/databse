@@ -142,10 +142,17 @@ max_per_id AS (
   		total_products,
   		ROW_NUMBER() OVER (PARTITION BY product_type_id ORDER BY total_products DESC) ROW_NUM
   	FROM with_type
+),
+
+-- Find the product_id, product_type_id and total_products sold for the product with the top sales within each product type.
+top_product AS (
+	SELECT product_id, product_type_id , total_products
+	FROM max_per_id
+	WHERE ROW_NUM = 1
+	ORDER BY total_products desc
 )
 
+SELECT TP.product_id, TP.product_type_id, TP.total_products, P.Shop_id
+FROM top_product TP, Product P
+WHERE TP.product_id = P.product_id;
 
-SELECT product_id, product_type_id , total_products
-FROM max_per_id 
-WHERE ROW_NUM = 1
-ORDER BY total_products desc;
