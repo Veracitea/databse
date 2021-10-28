@@ -189,5 +189,5 @@ WITH similar_cust_w_count AS(
 	ORDER BY c desc
 )
 
-SELECT customer_ID 
+SELECT Customer_id
 FROM similar_cust_w_count;
