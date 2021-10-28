@@ -173,16 +173,21 @@ ORDER BY max_prods desc;
 
 -- Now we will execute the required query 
 
-SELECT TOP 1 customer_ID,COUNT(DISTINCT product_id) as c
-FROM Order_item AS oi
-INNER JOIN Orders AS o
-    	ON oi.Order_id = o.Order_id
-WHERE product_id IN (
-    SELECT DISTINCT product_id 
-    FROM Order_item AS oi
-    INNER JOIN Orders as o
-        	ON oi.Order_id = o.Order_id
-    WHERE Customer_id = 715
-) AND Customer_id != 715
-GROUP BY Customer_id
-ORDER BY c desc;
+WITH similar_cust_w_count AS(
+	SELECT TOP 1 customer_ID,COUNT(DISTINCT product_id) as c
+	FROM Order_item AS oi
+	INNER JOIN Orders AS o
+    		ON oi.Order_id = o.Order_id
+	WHERE product_id IN (
+    	SELECT DISTINCT product_id 
+    	FROM Order_item AS oi
+    	INNER JOIN Orders as o
+        		ON oi.Order_id = o.Order_id
+    	WHERE Customer_id = 715
+	) 	AND Customer_id != 715
+	GROUP BY Customer_id
+	ORDER BY c desc
+)
+
+SELECT customer_ID 
+FROM similar_cust_w_count;
