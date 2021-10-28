@@ -38,6 +38,10 @@ WHERE parent_product_type_id IN (SELECT product_type_id
 								Where p.parent_product_type_id IS NULL);
 --THE ABOVE IS CORRECT AND CHECKED
 
+
+
+
+
 --Q4:Find 2 product ids that are ordered together the most. (T)
 --do query b4 inserting
 INSERT INTO Order_item(Order_id,seq_id,unit_price,quantity,status,Shipment_id,Product_id) VALUES ('OI10651',2,13,3,'processing',NULL,'PRODUCT_1');
@@ -51,6 +55,18 @@ FROM(
 	ON a.order_id = b.order_id AND a.seq_id<b.seq_id) AS c 
 group by c.original_p , c.bought_with
 ORDER BY times_together DESC
+
+
+
+
+
+
+
+
+
+
+
+
 
 --Q5:Get 3 random customers and return their email addresses. (HAHAHA SIKEEEE)
 
@@ -130,3 +146,48 @@ FROM max_per_id M, Product P
 WHERE M.product_id = P.product_id 
 AND ROW_NUM = 1
 ORDER BY total_products desc;
+
+
+
+--Q8: 
+-- Find similar customers:
+-- Given a customer (referred to as customer X) by customer ID, find a customer who is the most similar to customer X and return the corresponding customer ID.
+-- The similarity between two customers is defined as the number of unique products that are ordered by both customers.
+-- Unique means if the same product is ordered by one customer multiple times, it only contributes to the similarity by 1. Ordered means the payment status does not need to be considered.
+
+-- The below query is to check the customer who ordered the most products
+
+WITH a AS(
+    SELECT Customer_ID , COUNT(DISTINCT(Product_id)) AS num_prods
+    FROM Order_item AS oi 
+    INNER JOIN Orders AS o 
+        ON oi.Order_id = o.Order_id
+    GROUP BY Customer_ID
+)
+
+
+SELECT TOP 1 Customer_ID, MAX(num_prods) AS max_prods
+FROM a
+GROUP BY Customer_id
+ORDER BY max_prods desc;
+
+-- Now we will execute the required query 
+
+WITH similar_cust_w_count AS(
+	SELECT TOP 1 customer_ID,COUNT(DISTINCT product_id) as c
+	FROM Order_item AS oi
+	INNER JOIN Orders AS o
+    		ON oi.Order_id = o.Order_id
+	WHERE product_id IN (
+    	SELECT DISTINCT product_id 
+    	FROM Order_item AS oi
+    	INNER JOIN Orders as o
+        		ON oi.Order_id = o.Order_id
+    	WHERE Customer_id = 715
+	) 	AND Customer_id != 715
+	GROUP BY Customer_id
+	ORDER BY c desc
+)
+
+SELECT Customer_id
+FROM similar_cust_w_count;
